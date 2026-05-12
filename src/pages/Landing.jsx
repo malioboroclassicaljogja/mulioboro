@@ -29,7 +29,7 @@ export default function Landing() {
         }}
       />
 
-      {/* DARK OVERLAY */}
+      {/* OVERLAY */}
       <div
         style={{
           position: "absolute",
@@ -51,7 +51,8 @@ export default function Landing() {
           justifyContent: "center",
           alignItems: "center",
           textAlign: "center",
-          padding: "24px",
+          padding: "24px 18px",
+          boxSizing: "border-box",
         }}
       >
         {/* LOGO */}
@@ -59,9 +60,11 @@ export default function Landing() {
           src="/logo.png"
           alt="MCJ Logo"
           style={{
-            width: "880px",
-            maxWidth: "98%",
-            marginBottom: "28px",
+            width: "min(92vw, 880px)",
+            maxWidth: "100%",
+            display: "block",
+            margin: "0 auto 28px auto",
+            objectFit: "contain",
             filter: `
               drop-shadow(0 0 10px rgba(255,255,255,0.5))
               drop-shadow(0 0 22px rgba(255,255,255,0.28))
@@ -72,16 +75,19 @@ export default function Landing() {
         {/* DESCRIPTION */}
         <p
           style={{
+            width: "100%",
             maxWidth: "760px",
-            color: "rgba(255,255,255,0.82)",
-            fontSize: "clamp(15px, 1.5vw, 19px)",
-            lineHeight: 1.8,
+            color: "rgba(255,255,255,0.88)",
+            fontSize: "clamp(16px, 4vw, 19px)",
+            lineHeight: 1.7,
             marginBottom: "38px",
+            textAlign: "center",
           }}
         >
           Komunitas sosial, seni, dan budaya yang tumbuh dari denyut
-          Malioboro. Ruang bersama untuk berkarya, berbagi, berkolaborasi,
-          dan menjaga semangat kreativitas Yogyakarta sejak 1992.
+          Malioboro. Ruang bersama untuk berkarya, berbagi,
+          berkolaborasi, dan menjaga semangat kreativitas Yogyakarta
+          sejak 1992.
         </p>
 
         {/* BUTTONS */}
@@ -129,7 +135,7 @@ export default function Landing() {
           </button>
         </div>
 
-        {/* EVENTS LIST */}
+        {/* EVENTS */}
         {showEvents && (
           <div
             style={{
@@ -140,6 +146,7 @@ export default function Landing() {
               backdropFilter: "blur(10px)",
               marginBottom: "24px",
               minWidth: "320px",
+              maxWidth: "90%",
             }}
           >
             <div
@@ -169,6 +176,8 @@ export default function Landing() {
             marginTop: "20px",
             display: "flex",
             gap: "28px",
+            flexWrap: "wrap",
+            justifyContent: "center",
             fontSize: "15px",
             color: "rgba(255,255,255,0.75)",
           }}
